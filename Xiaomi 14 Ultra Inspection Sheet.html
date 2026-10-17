@@ -1,0 +1,387 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>14 Ultra Inspection Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column built for a phone held at a meetup. Phase chips on top, one card per check, a fixed verdict bar at the bottom. */
+:root{
+  --bg:#f2f4f3; --surface:#ffffff; --ink:#14201f; --muted:#566866; --line:#d5dcda;
+  --accent:#0b6e6a; --accent-ink:#ffffff;
+  --must:#b3261e; --must-bg:#fbe6e3;
+  --imp:#8a5a00; --imp-bg:#fbeccb;
+  --nice:#3f5c8a; --nice-bg:#e3ebf7;
+  --ok:#17673a; --ok-bg:#dff3e6;
+  --f-head:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1514; --surface:#162120; --ink:#e6eeec; --muted:#9bb0ad; --line:#2a3b39;
+    --accent:#4fc7bf; --accent-ink:#062321;
+    --must:#ff8a80; --must-bg:#3a1c19; --imp:#f2c15a; --imp-bg:#33280f;
+    --nice:#9db9e8; --nice-bg:#1b2740; --ok:#6fd49a; --ok-bg:#12301f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1514; --surface:#162120; --ink:#e6eeec; --muted:#9bb0ad; --line:#2a3b39;
+  --accent:#4fc7bf; --accent-ink:#062321;
+  --must:#ff8a80; --must-bg:#3a1c19; --imp:#f2c15a; --imp-bg:#33280f;
+  --nice:#9db9e8; --nice-bg:#1b2740; --ok:#6fd49a; --ok-bg:#12301f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--f-body);
+  padding-block:20px 150px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-head);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2rem;font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.35rem;font-weight:700}
+h3{font-size:1.05rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font:500 .72rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch}
+.mono{font-family:var(--f-mono);font-size:.88em}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font:600 .7rem/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:4px;white-space:nowrap}
+.tag.m{background:var(--must-bg);color:var(--must)}
+.tag.i{background:var(--imp-bg);color:var(--imp)}
+.tag.n{background:var(--nice-bg);color:var(--nice)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.fields label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--muted);min-width:0}
+input[type=text],textarea{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:9px 10px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:54px}
+
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 24px;margin:0}
+.spec div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--muted)} .spec dd{margin:0;text-align:right;font-weight:500}
+
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.chips a{flex:none;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:.85rem;display:flex;gap:8px;align-items:center}
+.chips a b{font:500 .75rem var(--f-mono);color:var(--muted)}
+.chips a.done{border-color:var(--ok)} .chips a.done b{color:var(--ok)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:.85rem}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.switch{display:flex;align-items:center;gap:8px;font-size:.85rem}
+
+.phase{display:flex;flex-direction:column;gap:10px;scroll-margin-top:12px}
+.phase-head{display:flex;flex-direction:column;gap:4px;padding-top:10px;border-top:2px solid var(--ink)}
+.phase-head .sub{color:var(--muted);font-size:.9rem;max-width:62ch}
+.item{background:var(--surface);border:1px solid var(--line);border-left-width:4px;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.item.m{border-left-color:var(--must)} .item.i{border-left-color:var(--imp)} .item.n{border-left-color:var(--nice)}
+.item.st-p{background:color-mix(in srgb,var(--ok-bg) 55%,var(--surface))}
+.item.st-f{background:color-mix(in srgb,var(--must-bg) 70%,var(--surface))}
+.item-top{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+details summary{cursor:pointer;color:var(--accent);font-size:.88rem;font-weight:500}
+details .body{display:flex;flex-direction:column;gap:8px;padding-top:8px;font-size:.92rem}
+details ol,details ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:4px}
+.good{color:var(--ok)} .bad{color:var(--must)}
+.good b,.bad b{font-weight:600}
+.act{display:flex;gap:8px}
+.act button{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:10px 8px;font-weight:600;font-size:.9rem}
+.act button[aria-pressed="true"][data-v="p"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.act button[aria-pressed="true"][data-v="f"]{background:var(--must);border-color:var(--must);color:var(--surface)}
+
+.fix li{margin-bottom:6px}
+.src ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+.src li{overflow-wrap:anywhere}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+  padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar-in{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.verdict{display:flex;gap:10px;align-items:center;border-radius:8px;padding:9px 12px;min-width:0}
+.verdict strong{font:700 1.05rem/1.1 var(--f-head);letter-spacing:.02em;text-transform:uppercase;flex:none}
+.verdict span{font-size:.85rem;min-width:0}
+.v-go{background:var(--ok-bg);color:var(--ok)} .v-stop{background:var(--must-bg);color:var(--must)}
+.v-wait{background:var(--bg);color:var(--ink)} .v-neg{background:var(--imp-bg);color:var(--imp)}
+.meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.meter-row{display:flex;justify-content:space-between;font:500 .75rem var(--f-mono);color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.meter i{transition:none}}
+@media (max-width:420px){.verdict{flex-direction:column;align-items:flex-start;gap:2px}}
+</style>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <p class="eyebrow">Used phone inspection · Xiaomi 14 Ultra · Dhaka</p>
+    <h1>Inspect it before you pay.</h1>
+    <p class="lede">Work top to bottom at the meetup. Mark each check Pass or Problem. The bar at the bottom tells you BUY, NEGOTIATE or WALK AWAY as you go. Your ticks are saved on this device.</p>
+    <div class="legend">
+      <span class="tag m">100% required</span><span class="tag i">Important</span><span class="tag n">Nice to have</span>
+    </div>
+    <p class="lede" style="font-size:.88rem">A <b>100% required</b> problem means walk away. An <b>Important</b> problem means ask for a lower price or walk. A <b>Nice to have</b> problem will not hurt you.</p>
+  </header>
+
+  <section class="panel" aria-label="Seller details">
+    <h2>Deal notes</h2>
+    <div class="fields">
+      <label for="m-seller">Seller name and phone<input type="text" id="m-seller" data-meta="seller" autocomplete="off"></label>
+      <label for="m-imei1">IMEI 1<input type="text" id="m-imei1" data-meta="imei1" inputmode="numeric" autocomplete="off"></label>
+      <label for="m-imei2">IMEI 2<input type="text" id="m-imei2" data-meta="imei2" inputmode="numeric" autocomplete="off"></label>
+      <label for="m-price">Price asked / agreed<input type="text" id="m-price" data-meta="price" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Known good values">
+    <h2>What a genuine global 14 Ultra shows</h2>
+    <dl class="spec">
+      <div><dt>Global model no.</dt><dd class="mono">24030PN60G</dd></div>
+      <div><dt>China model no.</dt><dd class="mono">24031PN0DC</dd></div>
+      <div><dt>Battery (global)</dt><dd>5000 mAh</dd></div>
+      <div><dt>Battery (China)</dt><dd>5300 mAh</dd></div>
+      <div><dt>Chipset</dt><dd>Snapdragon 8 Gen 3</dd></div>
+      <div><dt>Fingerprint</dt><dd>Optical, under screen</dd></div>
+      <div><dt>Screen</dt><dd>6.73″ AMOLED, 3200×1440</dd></div>
+      <div><dt>Cameras</dt><dd>4 × 50 MP, f/1.6–4.0 main</dd></div>
+      <div><dt>Weight</dt><dd>about 220 g</dd></div>
+      <div><dt>Water rating</dt><dd>IP68</dd></div>
+    </dl>
+    <p class="mono" style="color:var(--muted)">Global ROM version ends in MIXM. EUXM is Europe. CNXM is a China ROM.</p>
+  </section>
+
+  <nav class="chips" id="chips" aria-label="Phases"></nav>
+
+  <div class="toolbar">
+    <label class="switch"><input type="checkbox" id="only-must"> Show only 100% required</label>
+    <button class="btn" id="open-all" type="button">Open all details</button>
+  </div>
+
+  <main id="phases" style="display:flex;flex-direction:column;gap:28px"></main>
+
+  <section class="panel fix">
+    <h2>What I changed from the earlier checklist</h2>
+    <ul>
+      <li><b>Fingerprint.</b> The earlier list said the 14 Ultra has an ultrasonic scanner. Published specs list an optical under-screen scanner, so an optical scanner is normal and is not a sign of a fake screen.</li>
+      <li><b>Fastboot "LOCKED" text.</b> I could not confirm that the Xiaomi fastboot screen prints LOCKED. Xiaomi's own FAQ says to check Developer options, where Mi Unlock status is shown, and that an unlocked phone shows an unlocked notice at startup. The sheet uses those two checks.</li>
+      <li><b>mi.com/global/verify.</b> I could not confirm this page exists, so it is removed. Use the model number, IMEI lookup and Play Protect checks instead.</li>
+      <li><b>Call recorder toggle.</b> Dropped. Its presence does not reliably identify a region.</li>
+      <li><b>Added.</b> Bangladesh NEIR registration (a phone can be blocked on the network), Google account lock, financed-phone lock apps, delayed-notification test, Play Protect certification, RAM and storage check.</li>
+    </ul>
+  </section>
+
+  <section class="panel src">
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://m.gsmarena.com/xiaomi_14_ultra-12827.php">GSMArena: 14 Ultra specs, model numbers, battery by region</a></li>
+      <li><a href="https://www.phonearena.com/phones/compare/Xiaomi-14-Ultra,Xiaomi-Redmi-Note-14-Pro+/phones/12337,12442">PhoneArena: optical in-screen fingerprint, weight</a></li>
+      <li><a href="https://www.mi.com/global/support/faq/details/KA-07238/">Xiaomi support: how to see if the bootloader is unlocked</a></li>
+      <li><a href="https://www.thedailystar.net/tech-startup/news/how-check-if-your-mobile-illegal-or-not-4022981">The Daily Star: NEIR checks, de-registration</a></li>
+      <li><a href="https://www.tbsnews.net/explainer/what-national-equipment-identity-register-neir-1290026">TBS News: NEIR explained, KYD SMS to 16002</a></li>
+      <li><a href="https://en.ittefaq.com.bd/15190/no-deregistration-no-used-phone-sale-btrc">Daily Ittefaq: BTRC notice on de-registration before resale</a></li>
+      <li><a href="https://www.techloy.com/this-device-is-locked-on-xiaomi-what-it-means-and-how-to-unlock-responsibly/">Techloy: "This device is locked" on second-hand Xiaomi</a></li>
+      <li><a href="https://techenclave.com/t/how-to-check-the-item-while-buying-a-second-hand-phone-tablet/267921">TechEnclave: buyer tips, Device Lock Controller app</a></li>
+      <li><a href="https://unbox.ph/gadget/grey-market-xiaomi-unsupported-software/">Unbox.ph: China ROM problems such as delayed notifications</a></li>
+      <li><a href="https://droid.tools/xiaomi-hyperos-secret-codes-hidden-features">Droid Tools: Xiaomi HyperOS secret codes</a></li>
+      <li><a href="https://neir.btrc.gov.bd">neir.btrc.gov.bd: official BTRC NEIR portal</a> (BTRC helpline 100)</li>
+    </ul>
+    <p style="font-size:.85rem;color:var(--muted)">Secret codes and menu paths are community-reported and can differ between HyperOS builds. If a path is missing, use the Settings search box.</p>
+  </section>
+
+  <div class="toolbar">
+    <button class="btn pri" id="copy" type="button">Copy problems to send to Claude</button>
+    <button class="btn" id="clear" type="button">Clear all ticks</button>
+  </div>
+  <textarea id="report" hidden readonly rows="8" aria-label="Report text"></textarea>
+</div>
+
+<div class="bar" role="status" aria-live="polite">
+  <div class="bar-in">
+    <div class="verdict v-wait" id="verdict"><strong id="v-title">Not started</strong><span id="v-text"></span></div>
+    <div class="meter"><i id="meter"></i></div>
+    <div class="meter-row"><span id="m-left">0 of 0 checked</span><span id="m-pct">0%</span></div>
+  </div>
+</div>
+
+<script>
+var PH=[
+{id:"prep",name:"Before you go",sub:"Do this tonight and in the taxi.",items:[
+ {id:"p1",p:"m",t:"Plan to pay last, and only after the required checks pass",how:["Take cash or arrange the transfer, but do not hand anything over until the bar says BUY.","Meet in a lit public place such as a cafe, with a friend if you can."],pass:"You are in control of when money moves.",flag:"Seller wants payment first, or rushes you to skip steps. Walk away."},
+ {id:"p2",p:"i",t:"Pack the tools",how:["Power bank, USB-C cable, SIM ejector pin, torch, your own SIM with data, and a second phone for the hotspot and test calls."],pass:"Everything in the bag.",flag:"Missing items only slow you down."},
+ {id:"p3",p:"i",t:"Ask the seller for the IMEI and About-phone screenshot in advance",how:["Ask for a photo of the box label and a screenshot of Settings > About phone.","Compare model number and IMEI with what you see in person."],pass:"Seller sends them without fuss.",flag:"Seller refuses or sends a cropped image."},
+ {id:"p4",p:"n",t:"Know your price",how:["Check recent sold prices for a 14 Ultra with the same RAM and storage before you meet."],pass:"You have a walk-away number.",flag:""}
+]},
+{id:"id",name:"Identity and paperwork",sub:"Confirms it is the real global model and legal to use in Bangladesh.",items:[
+ {id:"i1",p:"m",t:"Model number is the global one",how:["Settings > About phone > Model number (or All specs).","Compare with the box label."],pass:"24030PN60G.",flag:"Ends in a different letter, or shows 24031PN0DC (China model). Walk away."},
+ {id:"i2",p:"m",t:"Software version ends in a global region code",how:["Settings > About phone > tap the HyperOS version.","Read the last letters of the version string."],pass:"…MIXM (Global) or …EUXM (Europe).",flag:"…CNXM means China ROM. China ROMs lack Google services and often delay notifications. Walk away."},
+ {id:"i3",p:"m",t:"IMEI matches everywhere",how:["Dial *#06#. You should see two IMEIs on a dual-SIM phone.","Compare with the box label and the Settings > About phone > Status screen.","Write IMEI 1 in Deal notes above."],pass:"All numbers identical.",flag:"Any mismatch, missing IMEI, or the box belongs to a different phone. Walk away."},
+ {id:"i4",p:"i",t:"IMEI lookup shows a Xiaomi 14 Ultra",how:["On your own phone, enter IMEI 1 into a free IMEI lookup site such as imei.info.","Check brand and model match 24030PN60G."],pass:"Xiaomi 14 Ultra, matching model code.",flag:"Different brand or model. Walk away."},
+ {id:"i5",p:"m",t:"NEIR status in Bangladesh is clear",how:["From your own phone, send an SMS: KYD [15-digit IMEI] to 16002. Confirm the shortcode on neir.btrc.gov.bd, because rules change.","BTRC says a registered used phone must be de-registered by its owner before it is sold. Ask the seller to do it with you present, using the last four digits of the NID or passport behind the SIM.","Then you register or connect it under your own SIM and NID. BTRC helpline is 100, operator care is 121."],pass:"Status is clear and the seller completes de-registration, or the phone is cleanly unregistered and you can register it.",flag:"Reply says blocked, cloned or duplicate IMEI, or the seller cannot or will not de-register. The phone can be cut off from the network. Walk away."},
+ {id:"i6",p:"i",t:"Seller identity and proof of purchase",how:["Ask the seller's name and phone number, and look at their NID.","Ask for the original invoice or box. Note both in Deal notes."],pass:"Seller identifies themselves and has box or receipt.",flag:"No ID, no box, odd story about where it came from. A stolen phone is the risk."},
+ {id:"i7",p:"n",t:"Box and accessories",how:["Original box, charger, cable, case, SIM pin, any photography kit."],pass:"Complete, matching IMEI.",flag:"Missing items are a price point only."}
+]},
+{id:"body",name:"Body and screen",sub:"Do this before powering up anything else. Use the torch.",items:[
+ {id:"b1",p:"i",t:"Frame and corners",how:["Look at the metal frame, bottom corners and around the USB-C port with the torch."],pass:"Light wear only.",flag:"Deep dents mean a hard drop. That can damage the camera stabilisation inside."},
+ {id:"b2",p:"m",t:"No dust or moisture inside the camera glass",how:["Shine the torch across the large camera ring and all four lenses from different angles."],pass:"Clean, clear glass.",flag:"Fog, droplets or dust inside the glass means water got in or the module was opened. Walk away."},
+ {id:"b3",p:"i",t:"Back glass and camera ring",how:["Check for cracks, chips and loose or crooked trim."],pass:"No cracks, evenly seated.",flag:"Cracks cost money to fix and can let water in."},
+ {id:"b4",p:"m",t:"Screen has no dead areas, lines or tint",how:["Show a solid white, black, red, green and blue image full screen. A photo or video of each colour works.","Scan for lines, pink or green tint, yellow patches, spots and burn-in ghosts at low brightness.","Draw slowly along all four curved edges to test touch."],pass:"Even colour, no lines, touch works to the edges.",flag:"Lines, dead zones or heavy burn-in are not repairable cheaply. Walk away."},
+ {id:"b5",p:"i",t:"Brightness is strong",how:["Set brightness to maximum outdoors or under a bright light.","A replaced aftermarket panel is often dimmer or a different tint."],pass:"Very bright and even.",flag:"Dim or uneven panel suggests a replaced screen."},
+ {id:"b6",p:"i",t:"Signs the phone was opened",how:["Look for uneven gaps, glue residue or marks around the screen edge.","Look at the screws near the USB-C port, if visible."],pass:"Factory-clean seams.",flag:"Marks or damaged screws mean a repair. Ask what was replaced."},
+ {id:"b7",p:"i",t:"SIM tray and water damage check",how:["Eject the SIM tray. It should slide out smoothly and snap back tight.","Use the torch to look into the slot for corrosion or green residue."],pass:"Tight tray, clean slot.",flag:"Corrosion or a loose tray means water exposure. Ask for a big discount or walk away."},
+ {id:"b8",p:"n",t:"Buttons and vibration",how:["Power and volume buttons should click firmly.","Trigger vibration with a keyboard or ringtone."],pass:"Crisp clicks, strong vibration.",flag:"Mushy buttons are a minor wear sign."}
+]},
+{id:"lock",name:"Locks and reset",sub:"The most important phase. A locked phone is worthless to you.",items:[
+ {id:"l1",p:"m",t:"Seller removes accounts and you factory reset it together",how:["Ask the seller to sign out of Mi Account and Google account in front of you.","Settings > About phone > Factory reset > Erase all data. Do it with them watching.","Phone reboots into the setup screen. Connect to your hotspot."],pass:"Setup screen appears normally. Skip the Mi Account sign-in for now.",flag:"The seller refuses to reset. Walk away."},
+ {id:"l2",p:"m",t:"No \"This device is locked\" screen after reset",how:["Complete setup past the Wi-Fi step."],pass:"Setup finishes with no account prompt.",flag:"\"This device is locked\" means it is tied to someone's Mi Account. Even the seller forgetting the password is a reason to walk away."},
+ {id:"l3",p:"m",t:"No Google account lock",how:["During setup, no previous Google account should be asked for after the reset."],pass:"No Google verification screen.",flag:"Asks for the previous owner's Google account. Walk away."},
+ {id:"l4",p:"m",t:"Bootloader is locked",how:["Settings > About phone, tap the HyperOS version 7 times to enable Developer options.","Settings > Additional settings > Developer options > Mi Unlock status.","On the next boot, watch the start screen for any unlocked notice."],pass:"Status shows the device is not unlocked.",flag:"Shows unlocked, or the boot screen shows an unlocked notice. The firmware may have been modified. Walk away."},
+ {id:"l5",p:"m",t:"No finance or remote-lock app",how:["Settings > search \"device admin\" and open the device admin apps list.","Check the full app list, including system apps, for names like Device Lock Controller."],pass:"No device admin apps, no lock controller.",flag:"A lock controller means the phone can be locked remotely if the previous owner missed payments. Walk away."},
+ {id:"l6",p:"i",t:"Fastboot mode looks normal",how:["Power off. Hold Volume Down + Power. You should see the Fastboot screen.","Only look. Do not touch anything. Hold Power for 10 seconds to reboot."],pass:"Normal Fastboot screen, reboots fine.",flag:"Odd custom screen or text. Tell me what it says."}
+]},
+{id:"rom",name:"Genuine global software",sub:"Needs mobile data or your hotspot.",items:[
+ {id:"r1",p:"m",t:"Play Store opens and Play Protect certifies the device",how:["Open Play Store and sign in with a throwaway or your own Google account.","Profile icon > Settings > About > Play Protect certification."],pass:"Device is certified.",flag:"Missing Play Store or not certified. It may be a China phone running a patched ROM. Walk away."},
+ {id:"r2",p:"m",t:"Widevine security level is L1",how:["Install the free app DRM Info from the Play Store.","Look at the Widevine section."],pass:"Security level L1, so HD video plays on streaming apps.",flag:"L3 usually means a flashed or modified phone. Walk away."},
+ {id:"r3",p:"m",t:"Chipset, RAM and storage match the listing",how:["Install DevCheck or open Settings > About phone.","Check Snapdragon 8 Gen 3, and the RAM and storage you are paying for (for example 16 GB / 512 GB)."],pass:"Exact match.",flag:"Less RAM or storage than advertised. Walk away or reprice."},
+ {id:"r4",p:"i",t:"Battery design capacity is the global 5000 mAh",how:["DevCheck > Battery shows design capacity on most builds."],pass:"About 5000 mAh.",flag:"5300 mAh points to a China-hardware phone. If it is not shown, rely on checks 1 to 3."},
+ {id:"r5",p:"i",t:"Regulatory label shows the CE mark",how:["Settings > About phone > All specs > Certification or Regulatory information."],pass:"CE mark.",flag:"Only China labels appear. Walk away."},
+ {id:"r6",p:"i",t:"System update works",how:["Settings > About phone > System update > check for updates."],pass:"Checks normally and says up to date or offers an update.",flag:"Error or no update server. The ROM may be fake."},
+ {id:"r7",p:"i",t:"No strange apps or pop-ups",how:["Scroll the app list. Watch for adware, unknown stores or Chinese-only apps that cannot be removed.","Run Play Protect scan."],pass:"Clean app list.",flag:"Unknown installed apps or pop-up ads."}
+]},
+{id:"net",name:"Network and notifications",sub:"This is the part you said must be perfect.",items:[
+ {id:"n1",p:"m",t:"Calls work both directions",how:["Insert your SIM. Turn off Wi-Fi.","Call your second phone for one minute, then call back from it.","Check you can hear clearly and the other side hears you."],pass:"Clear audio both ways, 4G shown.",flag:"No signal, dropped call or one-way audio. Walk away."},
+ {id:"n2",p:"m",t:"Mobile data is fast and stable",how:["Load a few sites and play a video on mobile data only.","Run a speed test and compare with your usual phone on the same SIM."],pass:"Similar or better than your current phone.",flag:"Much slower or constantly drops. Walk away."},
+ {id:"n3",p:"m",t:"Notifications arrive instantly with the app closed",how:["Install WhatsApp or Messenger. Close the app and lock the screen.","Message it from your other phone, then from Gmail.","Settings > Apps > Manage apps > the app > Autostart and Battery saver: set to No restrictions."],pass:"Sound and banner within seconds, repeated three times.",flag:"Late or missing alerts. This is the typical China-ROM fault. Walk away."},
+ {id:"n4",p:"i",t:"SMS send and receive",how:["Send an SMS to your second phone and back."],pass:"Both work.",flag:"One direction fails."},
+ {id:"n5",p:"i",t:"Second SIM slot works",how:["Move your SIM to slot 2, or insert both SIMs."],pass:"Network found.",flag:"Slot 2 dead. Worth a discount if you do not need it."},
+ {id:"n6",p:"i",t:"Wi-Fi, Bluetooth, NFC and GPS",how:["Join Wi-Fi and run a speed test.","Pair your earbuds and play audio.","Turn on NFC in Settings.","Open Maps outdoors and wait for a location fix."],pass:"All four work.",flag:"Any fails. Ask what the seller knows."},
+ {id:"n7",p:"n",t:"Optional: hardware test menu",how:["Dial *#*#6484#*#* to open the Xiaomi factory test menu (community-reported, may differ on your build).","Use it to run display, speaker, microphone and sensor tests.","Do not use any code that changes settings or resets the phone."],pass:"Tests pass.",flag:"Menu does not open on some builds. That is fine."}
+]},
+{id:"hw",name:"Hardware",sub:"Core parts that wear or get swapped.",items:[
+ {id:"h1",p:"i",t:"Microphones and speakers",how:["Record a voice note, play it back loudly.","Cover the bottom mic and speak, then cover the top mic and speak.","Play music and listen to both speakers."],pass:"Clear recording, stereo sound, no crackle.",flag:"Muffled mic or crackling speaker."},
+ {id:"h2",p:"i",t:"Fingerprint scanner",how:["Settings > Passwords & security > Fingerprints. Register your thumb.","Unlock the phone 10 times in a row."],pass:"Fast unlock. The scanner is optical, so a slightly slower unlock than ultrasonic is normal.",flag:"Fails often even after re-registering. Could be a replaced screen."},
+ {id:"h3",p:"i",t:"Sensors",how:["Hold the phone to your ear during a call. The screen should turn off.","Rotate the phone. Auto-rotate should follow.","Open Compass and move the phone in a figure eight."],pass:"All respond.",flag:"Screen stays on during calls, or the compass is stuck."},
+ {id:"h4",p:"m",t:"Charging and USB-C port",how:["Plug in with your power bank and cable. It should charge, and fast-charge with a proper adapter.","Gently wiggle the plug. Charging should not drop.","If the seller has the original 90 W charger, try it."],pass:"Charges steadily.",flag:"Does not charge, or drops when wiggled. Walk away."},
+ {id:"h5",p:"n",t:"Wireless charging",how:["Place it on a Qi charger if you have one."],pass:"Charges.",flag:"Not a deal-breaker."}
+]},
+{id:"cam",name:"Cameras",sub:"The reason you are buying this phone.",items:[
+ {id:"c1",p:"m",t:"All four rear lenses and the front camera work",how:["Open Camera. Tap through 0.6x, 1x, 3.2x and 5x.","Each should focus and show a sharp, clean image.","Switch to the front camera and take a selfie."],pass:"All lenses show a sharp image with no black screen or camera error.",flag:"Any lens black, blurry or throws an error. Walk away."},
+ {id:"c2",p:"i",t:"No dust spots on the sensor",how:["Pro mode, point at a plain white wall or the sky.","Check each lens for dark blotches."],pass:"Even surface.",flag:"Fixed dark spots mean dust inside the lens module."},
+ {id:"c3",p:"i",t:"Variable aperture works on the main camera",how:["Pro mode > main lens. Change aperture between f/1.6 and f/4.0."],pass:"Aperture changes without errors.",flag:"Stuck aperture or an error."},
+ {id:"c4",p:"i",t:"Stabilisation and zoom",how:["Record video at 5x and shake the phone gently. Picture should stay smooth.","Listen near the camera ring for a loud clacking noise. A tiny rattle is normal.","Zoom far in and tap a distant object. Focus should lock quickly."],pass:"Smooth video, quick focus, quiet module.",flag:"Loud clacking or constant focus hunting means a damaged stabiliser."},
+ {id:"c5",p:"n",t:"Skin tones in Leica Authentic",how:["Top of the camera app: switch from Leica Vibrant to Leica Authentic.","Take a photo of a face in mixed light."],pass:"Natural skin tone, not blown out.",flag:"Both modes look overexposed. That is a style choice, not a fault."},
+ {id:"c6",p:"i",t:"Video, torch and flash",how:["Record 30 seconds of 4K video with sound.","Switch on the flashlight and take a flash photo."],pass:"Records and plays back with sound; torch works.",flag:"No audio or crashes."}
+]},
+{id:"perf",name:"Performance and battery",sub:"The phone should be fast, cool and healthy.",items:[
+ {id:"f1",p:"i",t:"Battery health",how:["DevCheck or AccuBattery estimates capacity. HyperOS may not show health on every build.","Ask the seller how old the phone is and how it is charged."],pass:"About 85% or better of design capacity.",flag:"Under 80%. Negotiate a battery replacement cost."},
+ {id:"f2",p:"i",t:"Three-minute stress test",how:["Run a 3D benchmark or a heavy game for 3 minutes.","Check how warm it gets and whether frames stutter."],pass:"Warm but holdable, smooth.",flag:"Too hot to hold, sudden shutdown or heavy stutter."},
+ {id:"f3",p:"i",t:"Reboot twice and use it for 5 minutes",how:["Restart twice. Open a few apps, scroll, switch between them."],pass:"No crashes, freezes or random reboots.",flag:"Any crash or reboot loop."},
+ {id:"f4",p:"n",t:"Storage is healthy",how:["Copy a large file or record a long video. Check storage under Settings > About phone."],pass:"Smooth copy, free space adds up.",flag:"Errors writing files."}
+]},
+{id:"deal",name:"Close the deal",sub:"Only once the bar is green.",items:[
+ {id:"d1",p:"m",t:"Required checks are all green",how:["Look at the bar below. It must say BUY."],pass:"BUY.",flag:"WALK AWAY or still waiting."},
+ {id:"d2",p:"m",t:"Seller completes NEIR de-registration with you present",how:["Watch the seller de-register on the BTRC portal or app."],pass:"Done before payment.",flag:"Seller says they will do it later. Do not pay."},
+ {id:"d3",p:"i",t:"Written receipt with IMEI, names and price",how:["Short handwritten note: model, IMEI 1, price, seller name and phone, date. Both sign.","Take a photo of it and of the seller's ID if they allow."],pass:"Signed receipt in your phone.",flag:"Seller refuses to sign."},
+ {id:"d4",p:"i",t:"Negotiate for any Important problems",how:["Use the problems you marked to ask for a lower price."],pass:"Agreed price.",flag:"No movement. Walk away."},
+ {id:"d5",p:"n",t:"After buying",how:["Register the phone under your NID and SIM on NEIR.","Sign in with your own Mi Account and Google account, and turn on Find Device.","Install system updates and set up your fingerprint."],pass:"Phone is yours and findable.",flag:""}
+]}
+];
+
+var KEY="x14u-inspection-v1";
+var S={s:{},n:{},meta:{}};
+try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.s){S=o;S.n=S.n||{};S.meta=S.meta||{}}}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+var TAG={m:"100% required",i:"Important",n:"Nice to have"};
+var all=[];PH.forEach(function(p){p.items.forEach(function(it){it.ph=p.name;all.push(it)})});
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+
+var host=document.getElementById("phases"),chips=document.getElementById("chips");
+PH.forEach(function(p,i){
+  var sec=document.createElement("section");sec.className="phase";sec.id="ph-"+p.id;
+  var h='<div class="phase-head"><span class="eyebrow">Phase '+(i+1)+' of '+PH.length+'</span><h2>'+esc(p.name)+'</h2><p class="sub">'+esc(p.sub)+'</p></div>';
+  p.items.forEach(function(it){
+    h+='<article class="item '+it.p+'" data-id="'+it.id+'"><div class="item-top"><span class="tag '+it.p+'">'+TAG[it.p]+'</span><h3>'+esc(it.t)+'</h3></div>'+
+    '<details><summary>How to check</summary><div class="body"><ol>'+it.how.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ol>'+
+    '<p class="good"><b>Good:</b> '+esc(it.pass)+'</p>'+(it.flag?'<p class="bad"><b>Problem:</b> '+esc(it.flag)+'</p>':'')+'</div></details>'+
+    '<div class="act"><button type="button" data-v="p" aria-pressed="false">Pass</button><button type="button" data-v="f" aria-pressed="false">Problem</button></div>'+
+    '<textarea id="note-'+it.id+'" data-note="'+it.id+'" placeholder="What did you see?" hidden></textarea></article>';
+  });
+  sec.innerHTML=h;host.appendChild(sec);
+  var a=document.createElement("a");a.href="#ph-"+p.id;a.id="chip-"+p.id;a.innerHTML=esc(p.name)+' <b></b>';
+  a.addEventListener("click",function(e){e.preventDefault();sec.scrollIntoView({behavior:"smooth",block:"start"})});
+  chips.appendChild(a);
+});
+
+function paint(){
+  var total=all.length,done=0,mustTotal=0,mustDone=0,mustFail=[],impFail=[],mustLeft=0;
+  all.forEach(function(it){
+    var v=S.s[it.id];if(v)done++;
+    if(it.p==="m"){mustTotal++;if(v)mustDone++;else mustLeft++}
+    if(v==="f"){(it.p==="m"?mustFail:it.p==="i"?impFail:[]).push(it)}
+    var el=host.querySelector('[data-id="'+it.id+'"]');
+    el.classList.toggle("st-p",v==="p");el.classList.toggle("st-f",v==="f");
+    el.querySelectorAll(".act button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.v===v))});
+    var ta=el.querySelector("textarea");ta.hidden=v!=="f";
+    if(document.activeElement!==ta)ta.value=S.n[it.id]||"";
+  });
+  PH.forEach(function(p){
+    var d=p.items.filter(function(it){return S.s[it.id]}).length;
+    var c=document.getElementById("chip-"+p.id);c.querySelector("b").textContent=d+"/"+p.items.length;
+    c.classList.toggle("done",d===p.items.length);
+  });
+  var vb=document.getElementById("verdict"),t=document.getElementById("v-title"),x=document.getElementById("v-text");
+  var cls="v-wait",title="Not started",txt="Start with the first phase.";
+  if(mustFail.length){cls="v-stop";title="Walk away";txt=mustFail.length+" required problem"+(mustFail.length>1?"s":"")+": "+mustFail[0].t+(mustFail.length>1?" and more":"")+"."}
+  else if(mustLeft>0){cls="v-wait";title=done?"Keep going":"Not started";txt=mustLeft+" required check"+(mustLeft>1?"s":"")+" still open."+(impFail.length?" "+impFail.length+" important problem"+(impFail.length>1?"s":"")+" so far.":"")}
+  else if(impFail.length){cls="v-neg";title="Negotiate";txt="All required checks pass. "+impFail.length+" important problem"+(impFail.length>1?"s":"")+" to price in."}
+  else{cls="v-go";title="Buy";txt="All "+mustTotal+" required checks pass."+(done<total?" "+(total-done)+" optional left.":"")}
+  vb.className="verdict "+cls;t.textContent=title;x.textContent=txt;
+  var pct=Math.round(done/total*100);
+  document.getElementById("meter").style.width=pct+"%";
+  document.getElementById("m-left").textContent=done+" of "+total+" checked · required "+mustDone+"/"+mustTotal;
+  document.getElementById("m-pct").textContent=pct+"%";
+}
+
+host.addEventListener("click",function(e){
+  var b=e.target.closest(".act button");if(!b)return;
+  var id=b.closest(".item").dataset.id,v=b.dataset.v;
+  if(S.s[id]===v)delete S.s[id];else S.s[id]=v;
+  save();paint();
+});
+host.addEventListener("input",function(e){
+  var id=e.target.dataset.note;if(!id)return;S.n[id]=e.target.value;save();
+});
+document.querySelectorAll("[data-meta]").forEach(function(inp){
+  inp.value=S.meta[inp.dataset.meta]||"";
+  inp.addEventListener("input",function(){S.meta[inp.dataset.meta]=inp.value;save()});
+});
+
+document.getElementById("only-must").addEventListener("change",function(e){
+  host.querySelectorAll(".item:not(.m)").forEach(function(el){el.hidden=e.target.checked});
+});
+var openAll=false;
+document.getElementById("open-all").addEventListener("click",function(e){
+  openAll=!openAll;host.querySelectorAll("details").forEach(function(d){d.open=openAll});
+  e.target.textContent=openAll?"Close all details":"Open all details";
+});
+
+function reportText(){
+  var L=["Xiaomi 14 Ultra inspection"];
+  var m=S.meta;if(m.seller)L.push("Seller: "+m.seller);if(m.imei1)L.push("IMEI 1: "+m.imei1);if(m.price)L.push("Price: "+m.price);
+  var bad=all.filter(function(it){return S.s[it.id]==="f"});
+  L.push("");L.push(bad.length?"Problems:":"No problems marked.");
+  bad.forEach(function(it){L.push("- ["+TAG[it.p]+"] "+it.ph+": "+it.t+(S.n[it.id]?" — "+S.n[it.id]:""))});
+  var open=all.filter(function(it){return it.p==="m"&&!S.s[it.id]});
+  if(open.length){L.push("");L.push("Required checks not done: "+open.length)}
+  return L.join("\n");
+}
+document.getElementById("copy").addEventListener("click",function(e){
+  var btn=e.target,txt=reportText(),ta=document.getElementById("report");
+  function fallback(){ta.hidden=false;ta.value=txt;ta.focus();ta.select();btn.textContent="Select and copy the text below"}
+  try{navigator.clipboard.writeText(txt).then(function(){btn.textContent="Copied. Paste it in the chat.";setTimeout(function(){btn.textContent="Copy problems to send to Claude"},2500)},fallback)}catch(err){fallback()}
+});
+var clr=document.getElementById("clear"),ct;
+clr.addEventListener("click",function(){
+  if(clr.dataset.armed){S.s={};S.n={};save();paint();clr.textContent="Clear all ticks";delete clr.dataset.armed;clearTimeout(ct);return}
+  clr.dataset.armed="1";clr.textContent="Tap again to clear";ct=setTimeout(function(){clr.textContent="Clear all ticks";delete clr.dataset.armed},4000);
+});
+paint();
+</script>
+
+</body></html>
