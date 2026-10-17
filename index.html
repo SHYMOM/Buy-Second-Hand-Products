@@ -1,35 +1,385 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Buy Second-Hand Products — Inspection Sheets</title>
-  <meta name="description" content="Inspection sheets for buying second-hand products. Inspect before you pay.">
-  <link rel="alternate" type="application/json" id="sheets" href="sheets.json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Used Product Inspection Sheets · Buy Second Hand Products</title>
+  <meta name="description" content="Field-tested pre-purchase inspection checklists for second-hand smartphones, laptops, and gadgets. Test before you pay at meetups.">
   <link rel="stylesheet" href="assets/theme.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+  <script>
+    (function() {
+      var t = localStorage.getItem('product-inspection-theme') || localStorage.getItem('hub-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234fc7bf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11'/></svg>">
 </head>
 <body>
-  <div class="wrap">
-    <header class="hub-head">
-      <p class="eyebrow">Inspect before you pay</p>
-      <h1>Second-hand inspection sheets</h1>
-      <p class="lede">Practical checklists for buying used goods. Find a sheet by product, browse by category and brand, and open it to inspect in person.</p>
-      <div class="hub-search">
-        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
-        <input type="search" id="q" name="q" placeholder="Search sheets by product, brand or category…" autocomplete="off">
+  <div class="container">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="top-bar">
+        <a href="index.html" class="brand-badge" id="brand-link">
+          <span class="brand-dot"></span>
+          <span>SECOND-HAND INSPECTION HUB</span>
+        </a>
+        <div class="header-controls">
+          <button type="button" class="theme-toggle-btn" id="theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+            <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+          <a href="https://github.com/shymom/Buy-Second-Hand-Products" target="_blank" rel="noopener" class="icon-btn" title="View Source on GitHub" aria-label="GitHub Repository">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <p class="hub-count" id="count" aria-live="polite"></p>
+
+      <div class="hero">
+        <span class="eyebrow">FIELD-READY BUYER GUIDES</span>
+        <h1>Inspect it before you pay.</h1>
+        <p class="lede">
+          Mobile-friendly, interactive checklists designed to be pulled up right at the meetup. Step-by-step pass/fail verdicts, hardware spec checks, and scam prevention for used tech.
+        </p>
+      </div>
     </header>
 
-    <div id="groups" style="display:flex;flex-direction:column;gap:22px"></div>
+    <!-- Search & Filter Controls -->
+    <section class="controls-wrapper" aria-label="Search and filter inspection sheets">
+      <div class="search-box">
+        <span class="search-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input 
+          type="search" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search sheets by model, brand, or category... (Press / to focus)"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <span class="search-shortcut" id="search-shortcut">/</span>
+        <button type="button" id="search-clear" class="search-clear" title="Clear search" aria-label="Clear search">✕</button>
+      </div>
 
-    <footer class="footer">
-      <p>Each sheet is a mobile-first checklist saved on your device. Built for meetups, not for trust you cannot verify in person.</p>
-      <p><a href="sheets.json">sheets.json</a> · <a href="404.html">Page not found</a></p>
+      <div class="filter-chips" id="filter-chips" role="tablist" aria-label="Category filter">
+        <button type="button" class="chip active" data-category="all" role="tab" aria-selected="true">
+          All Sheets <span class="chip-count" id="count-all">1</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Content Area: Grouped Sheets -->
+    <main id="sheets-container">
+      <div id="loading" style="padding: 30px; text-align: center; color: var(--muted); font-family: var(--f-mono);">
+        Loading inspection catalog...
+      </div>
+    </main>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state" role="status">
+      <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="8" y1="11" x2="14" y2="11"/>
+      </svg>
+      <h2 class="empty-title">No matching inspection sheets</h2>
+      <p class="empty-subtitle">We couldn't find any sheets matching your query. Try searching for a different brand or clearing your search.</p>
+      <button type="button" id="btn-reset-search" class="btn-reset">Reset Search & Filters</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <strong>Buy Second Hand Products</strong> · Inspection Hub
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/shymom/Buy-Second-Hand-Products" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/shymom/Buy-Second-Hand-Products/issues" target="_blank" rel="noopener">Request a Sheet</a>
+          <a href="#brand-link">Back to Top ↑</a>
+        </div>
+      </div>
+      <p class="mono" style="font-size:0.75rem; color:var(--muted)">
+        Checklists run locally in your browser. State is preserved on your device so you won't lose your inspection notes if you refresh during a deal.
+      </p>
     </footer>
   </div>
 
-  <script src="app.js"></script>
+  <script>
+    // Fallback data in case local file:// access blocks fetch()
+    const DEFAULT_SHEETS = [
+      {
+        "id": "xiaomi-14-ultra",
+        "title": "Xiaomi 14 Ultra Inspection Sheet",
+        "category": "Phones",
+        "brand": "Xiaomi",
+        "url": "phones/xiaomi/xiaomi-14-ultra-inspection-sheet.html",
+        "date": "2026-10-18",
+        "description": "Pre-purchase inspection checklist: genuine hardware check, screen tint/burn-in, Leica camera seals, China vs Global ROM verification.",
+        "model": "24030PN60G / 24031PN0DC"
+      }
+    ];
+
+    let allSheets = [];
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    // Theme Management
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    const sunIcon = document.getElementById('theme-icon-sun');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'light') {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+      } else {
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+      }
+      localStorage.setItem('product-inspection-theme', theme);
+      localStorage.setItem('hub-theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('product-inspection-theme') || localStorage.getItem('hub-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    applyTheme(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      applyTheme(isLight ? 'dark' : 'light');
+    });
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'product-inspection-theme' || e.key === 'hub-theme') {
+        if (e.newValue) applyTheme(e.newValue);
+      }
+    });
+
+    // Keyboard shortcut '/'
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    const searchShortcut = document.getElementById('search-shortcut');
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      if (searchQuery.length > 0) {
+        searchClear.classList.add('visible');
+        searchShortcut.style.display = 'none';
+      } else {
+        searchClear.classList.remove('visible');
+        searchShortcut.style.display = 'block';
+      }
+      renderSheets();
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.classList.remove('visible');
+      searchShortcut.style.display = 'block';
+      searchInput.focus();
+      renderSheets();
+    });
+
+    document.getElementById('btn-reset-search').addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.classList.remove('visible');
+      searchShortcut.style.display = 'block';
+      activeCategory = 'all';
+      updateFilterChipUI();
+      renderSheets();
+    });
+
+    // Fetch and render data
+    async function loadSheets() {
+      try {
+        const res = await fetch('sheets.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('Failed to load sheets.json: HTTP ' + res.status);
+        const data = await res.json();
+        allSheets = Array.isArray(data) ? data : (data.sheets || []);
+      } catch (err) {
+        console.warn('Falling back to built-in sheet registry due to fetch error:', err);
+        allSheets = DEFAULT_SHEETS;
+      }
+      setupFilterChips();
+      renderSheets();
+    }
+
+    function setupFilterChips() {
+      const container = document.getElementById('filter-chips');
+      const categories = [...new Set(allSheets.map(s => s.category).filter(Boolean))];
+      
+      document.getElementById('count-all').textContent = allSheets.length;
+
+      categories.forEach(cat => {
+        const count = allSheets.filter(s => s.category === cat).length;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chip';
+        btn.dataset.category = cat;
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', 'false');
+        btn.innerHTML = `${escapeHtml(cat)} <span class="chip-count">${count}</span>`;
+        btn.addEventListener('click', () => {
+          activeCategory = cat;
+          updateFilterChipUI();
+          renderSheets();
+        });
+        container.appendChild(btn);
+      });
+
+      container.querySelector('[data-category="all"]').addEventListener('click', () => {
+        activeCategory = 'all';
+        updateFilterChipUI();
+        renderSheets();
+      });
+    }
+
+    function updateFilterChipUI() {
+      document.querySelectorAll('#filter-chips .chip').forEach(chip => {
+        const match = chip.dataset.category === activeCategory;
+        chip.classList.toggle('active', match);
+        chip.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+    }
+
+    function renderSheets() {
+      const container = document.getElementById('sheets-container');
+      const emptyState = document.getElementById('empty-state');
+
+      // Filter sheets
+      const filtered = allSheets.filter(sheet => {
+        const matchesCategory = (activeCategory === 'all' || sheet.category === activeCategory);
+        if (!matchesCategory) return false;
+        
+        if (!searchQuery) return true;
+        const haystack = [
+          sheet.title,
+          sheet.brand,
+          sheet.category,
+          sheet.model,
+          sheet.description
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        return haystack.includes(searchQuery);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.add('visible');
+        return;
+      }
+
+      emptyState.classList.remove('visible');
+
+      // Group by Category -> Brand
+      const grouped = {};
+      filtered.forEach(sheet => {
+        const cat = sheet.category || 'Other';
+        const brand = sheet.brand || 'General';
+        if (!grouped[cat]) grouped[cat] = {};
+        if (!grouped[cat][brand]) grouped[cat][brand] = [];
+        grouped[cat][brand].push(sheet);
+      });
+
+      let html = '';
+      for (const [category, brands] of Object.entries(grouped)) {
+        let categoryTotal = 0;
+        Object.values(brands).forEach(arr => categoryTotal += arr.length);
+
+        html += `
+          <section class="category-section" aria-label="${escapeHtml(category)} Inspection Sheets">
+            <div class="category-header">
+              <h2 class="category-title">
+                ${escapeHtml(category)}
+              </h2>
+              <span class="category-badge">${categoryTotal} ${categoryTotal === 1 ? 'Sheet' : 'Sheets'}</span>
+            </div>
+        `;
+
+        for (const [brand, sheets] of Object.entries(brands)) {
+          html += `
+            <div class="brand-group">
+              <h3 class="brand-title">${escapeHtml(brand)}</h3>
+              <div class="card-grid">
+          `;
+
+          sheets.forEach(sheet => {
+            html += `
+              <a href="${escapeHtml(sheet.url)}" class="sheet-card">
+                <div class="sheet-top">
+                  <div class="sheet-meta-row">
+                    <span class="tag tag-brand">${escapeHtml(sheet.brand)}</span>
+                    <span class="tag-date">${escapeHtml(sheet.date || '')}</span>
+                  </div>
+                  <h4 class="sheet-title">${escapeHtml(sheet.title)}</h4>
+                  ${sheet.model ? `<div class="sheet-model">Model: ${escapeHtml(sheet.model)}</div>` : ''}
+                  <p class="sheet-desc">${escapeHtml(sheet.description || '')}</p>
+                </div>
+                <div class="sheet-bottom">
+                  <span class="mono" style="color:var(--muted)">Checklist Ready</span>
+                  <span class="sheet-link-label">
+                    Open Sheet
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            `;
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        }
+
+        html += `</section>`;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Initialize
+    loadSheets();
+  </script>
 </body>
 </html>
