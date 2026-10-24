@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Vivo X100 Ultra Inspection Sheet · Buy Second Hand Products</title>
+  <meta name="description" content="Field-tested pre-purchase inspection checklist for second-hand Vivo X100 Ultra. Complete pass/fail checks for Zeiss 200MP camera, OriginOS China software, display, ultrasonic fingerprint, and NEIR de-registration.">
+  <script>(function(){var t=localStorage.getItem('product-inspection-theme')||localStorage.getItem('hub-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234fc7bf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11'/></svg>">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+  :root{
+    color-scheme:light dark;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#f2f4f3; --surface:#ffffff; --ink:#14201f; --muted:#566866; --line:#d5dcda;
+    --accent:#0b6e6a; --accent-ink:#ffffff;
+    --must:#b3261e; --must-bg:#fbe6e3;
+    --imp:#8a5a00; --imp-bg:#fbeccb;
+    --nice:#3f5c8a; --nice-bg:#e3ebf7;
+    --ok:#17673a; --ok-bg:#dff3e6;
+    --f-head:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+    --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px)}
+  img{max-width:100%}
+  [hidden]:not([hidden=until-found i]){display:none!important}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1514; --surface:#162120; --ink:#e6eeec; --muted:#9bb0ad; --line:#2a3b39;
+      --accent:#4fc7bf; --accent-ink:#062321;
+      --must:#ff8a80; --must-bg:#3a1c19; --imp:#f2c15a; --imp-bg:#33280f;
+      --nice:#9db9e8; --nice-bg:#1b2740; --ok:#6fd49a; --ok-bg:#12301f; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1514; --surface:#162120; --ink:#e6eeec; --muted:#9bb0ad; --line:#2a3b39;
+    --accent:#4fc7bf; --accent-ink:#062321;
+    --must:#ff8a80; --must-bg:#3a1c19; --imp:#f2c15a; --imp-bg:#33280f;
+    --nice:#9db9e8; --nice-bg:#1b2740; --ok:#6fd49a; --ok-bg:#12301f; color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#f2f4f3; --surface:#ffffff; --ink:#14201f; --muted:#566866; --line:#d5dcda;
+    --accent:#0b6e6a; --accent-ink:#ffffff;
+    --must:#b3261e; --must-bg:#fbe6e3;
+    --imp:#8a5a00; --imp-bg:#fbeccb;
+    --nice:#3f5c8a; --nice-bg:#e3ebf7;
+    --ok:#17673a; --ok-bg:#dff3e6;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font:400 15px/1.55 var(--f-body);
+    padding-block:20px 150px;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));
+  }
+  .wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+  h1,h2,h3{font-family:var(--f-head);text-wrap:balance;margin:0;line-height:1.15}
+  h1{font-size:2rem;font-weight:700;letter-spacing:-.01em}
+  h2{font-size:1.35rem;font-weight:700}
+  h3{font-size:1.05rem;font-weight:600}
+  p{margin:0}
+  a{color:var(--accent)}
+  .eyebrow{font:500 .72rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .lede{color:var(--muted);max-width:62ch}
+  .mono{font-family:var(--f-mono);font-size:.88em}
+  button{font:inherit;color:inherit;cursor:pointer}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font:600 .7rem/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:4px;white-space:nowrap}
+  .tag.m{background:var(--must-bg);color:var(--must)}
+  .tag.i{background:var(--imp-bg);color:var(--imp)}
+  .tag.n{background:var(--nice-bg);color:var(--nice)}
+
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .fields label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--muted);min-width:0}
+  input[type=text],textarea{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:9px 10px;width:100%;min-width:0}
+  textarea{resize:vertical;min-height:54px}
+
+  .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 24px;margin:0}
+  .spec div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .spec dt{color:var(--muted)} .spec dd{margin:0;text-align:right;font-weight:500}
+
+  .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .chips a{flex:none;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:.85rem;display:flex;gap:8px;align-items:center}
+  .chips a b{font:500 .75rem var(--f-mono);color:var(--muted)}
+  .chips a.done{border-color:var(--ok)} .chips a.done b{color:var(--ok)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .btn{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:.85rem}
+  .btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+  .switch{display:flex;align-items:center;gap:8px;font-size:.85rem}
+
+  .phase{display:flex;flex-direction:column;gap:10px;scroll-margin-top:12px}
+  .phase-head{display:flex;flex-direction:column;gap:4px;padding-top:10px;border-top:2px solid var(--ink)}
+  .phase-head .sub{color:var(--muted);font-size:.9rem;max-width:62ch}
+  .item{background:var(--surface);border:1px solid var(--line);border-left-width:4px;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+  .item.m{border-left-color:var(--must)} .item.i{border-left-color:var(--imp)} .item.n{border-left-color:var(--nice)}
+  .item.st-p{background:color-mix(in srgb,var(--ok-bg) 55%,var(--surface))}
+  .item.st-f{background:color-mix(in srgb,var(--must-bg) 70%,var(--surface))}
+  .item-top{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+  details summary{cursor:pointer;color:var(--accent);font-size:.88rem;font-weight:500}
+  details .body{display:flex;flex-direction:column;gap:8px;padding-top:8px;font-size:.92rem}
+  details ol,details ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:4px}
+  .good{color:var(--ok)} .bad{color:var(--must)}
+  .good b,.bad b{font-weight:600}
+  .act{display:flex;gap:8px}
+  .act button{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:10px 8px;font-weight:600;font-size:.9rem}
+  .act button[aria-pressed="true"][data-v="p"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+  .act button[aria-pressed="true"][data-v="f"]{background:var(--must);border-color:var(--must);color:var(--surface)}
+
+  .fix li{margin-bottom:6px}
+  .src ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+  .src li{overflow-wrap:anywhere}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+    padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .bar-in{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+  .verdict{display:flex;gap:10px;align-items:center;border-radius:8px;padding:9px 12px;min-width:0}
+  .verdict strong{font:700 1.05rem/1.1 var(--f-head);letter-spacing:.02em;text-transform:uppercase;flex:none}
+  .verdict span{font-size:.85rem;min-width:0}
+  .v-go{background:var(--ok-bg);color:var(--ok)} .v-stop{background:var(--must-bg);color:var(--must)}
+  .v-wait{background:var(--bg);color:var(--ink)} .v-neg{background:var(--imp-bg);color:var(--imp)}
+  .meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+  .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+  .meter-row{display:flex;justify-content:space-between;font:500 .75rem var(--f-mono);color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.meter i{transition:none}}
+  @media (max-width:420px){.verdict{flex-direction:column;align-items:flex-start;gap:2px}}
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="hub-nav" aria-label="Breadcrumb" style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:4px">
+    <div style="display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.78rem">
+      <a href="../../index.html" style="display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;transition:color .15s" title="Back to All Inspection Sheets">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Sheets
+      </a>
+      <span style="color:var(--line)">/</span>
+      <span style="color:var(--muted)">Phones</span>
+      <span style="color:var(--line)">/</span>
+      <span style="color:var(--accent);font-weight:600">Vivo X100 Ultra</span>
+    </div>
+
+    <button type="button" id="theme-toggle" class="btn" title="Toggle Light/Dark Theme" aria-label="Toggle theme" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--muted);cursor:pointer">
+      <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </button>
+  </nav>
+
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <p class="eyebrow">Used phone inspection · Vivo X100 Ultra (China version) · Dhaka</p>
+    <h1>Inspect the X100 Ultra before you pay.</h1>
+    <p class="lede">Work top to bottom at the meetup. Mark each check Pass or Problem. The bar at the bottom tells you BUY, NEGOTIATE or WALK AWAY as you go. Your ticks are saved on this device.</p>
+    <div class="legend">
+      <span class="tag m">100% required</span><span class="tag i">Important</span><span class="tag n">Nice to have</span>
+    </div>
+    <p class="lede" style="font-size:.88rem">A <b>100% required</b> problem means walk away. An <b>Important</b> problem means ask for a lower price or walk. A <b>Nice to have</b> problem will not hurt you.</p>
+  </header>
+
+  <section class="panel" aria-label="Seller details">
+    <h2>Deal notes</h2>
+    <div class="fields">
+      <label for="m-seller">Seller name and phone<input type="text" id="m-seller" data-meta="seller" autocomplete="off"></label>
+      <label for="m-imei1">IMEI 1<input type="text" id="m-imei1" data-meta="imei1" inputmode="numeric" autocomplete="off"></label>
+      <label for="m-imei2">IMEI 2<input type="text" id="m-imei2" data-meta="imei2" inputmode="numeric" autocomplete="off"></label>
+      <label for="m-price">Price asked / agreed<input type="text" id="m-price" data-meta="price" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Known good values">
+    <h2>What a genuine X100 Ultra shows</h2>
+    <dl class="spec">
+      <div><dt>Model numbers</dt><dd class="mono">V2366GA / V2366HA</dd></div>
+      <div><dt>Sold in</dt><dd>China only</dd></div>
+      <div><dt>Chipset</dt><dd>Snapdragon 8 Gen 3</dd></div>
+      <div><dt>Screen</dt><dd>6.78″ LTPO AMOLED, 3200×1440</dd></div>
+      <div><dt>Battery</dt><dd>5500 mAh</dd></div>
+      <div><dt>Charging</dt><dd>80 W wired, 30 W wireless</dd></div>
+      <div><dt>Main camera</dt><dd>50 MP, 1-inch class</dd></div>
+      <div><dt>Telephoto</dt><dd>200 MP periscope, 3.7x</dd></div>
+      <div><dt>Ultrawide / selfie</dt><dd>50 MP / 50 MP</dd></div>
+      <div><dt>Fingerprint</dt><dd>Ultrasonic, under screen</dd></div>
+      <div><dt>Versions</dt><dd>12/256, 16/512, 16/1TB</dd></div>
+      <div><dt>Weight</dt><dd>about 229 g</dd></div>
+      <div><dt>Water rating</dt><dd>IP68 / IP69</dd></div>
+      <div><dt>Storage</dt><dd>UFS 4.0, no card slot</dd></div>
+    </dl>
+    <p class="mono" style="color:var(--muted)">Specs from GSMArena. There is no global version, so there is no global model number to look for.</p>
+  </section>
+
+  <nav class="chips" id="chips" aria-label="Phases"></nav>
+
+  <div class="toolbar">
+    <label class="switch"><input type="checkbox" id="only-must"> Show only 100% required</label>
+    <button class="btn" id="open-all" type="button">Open all details</button>
+  </div>
+
+  <main id="phases" style="display:flex;flex-direction:column;gap:28px"></main>
+
+  <section class="panel fix">
+    <h2>Read this first: how this phone differs</h2>
+    <ul>
+      <li><b>It is China software.</b> Every X100 Ultra is a China unit running China OriginOS. Google apps are added afterwards, and some apps may treat the phone as uncertified.</li>
+      <li><b>No official bootloader unlock.</b> Vivo offers none, so unlike a Xiaomi, a modified phone came from an unofficial method. The sheet asks the seller directly.</li>
+      <li><b>Notifications are the main risk.</b> China power management can delay alerts, especially overnight. The sheet adds an idle test and a written trial agreement.</li>
+      <li><b>Dropped from the Xiaomi sheet:</b> the MIXM region code, CE label and Mi Account checks. Replaced with vivo account and Google checks.</li>
+      <li><b>Not verified.</b> Whether banking apps in Bangladesh accept the phone, and how VoLTE behaves on each local operator. Test both in person.</li>
+    </ul>
+  </section>
+
+  <section class="panel src">
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://m.gsmarena.com/vivo_x100_ultra-12994.php" target="_blank" rel="noopener">GSMArena: X100 Ultra specs, model numbers, bands</a></li>
+      <li><a href="https://www.gizchina.com/2024/05/15/vivo-x100-ultra-wont-be-launching-outside-china/" target="_blank" rel="noopener">Gizchina: X100 Ultra not sold outside China</a></li>
+      <li><a href="https://us.smartprix.com/bytes/how-to-get-google-play-store-working-on-chinese-roms" target="_blank" rel="noopener">Smartprix: Google Play on Chinese OriginOS</a></li>
+      <li><a href="https://www.smartzone.de/vivo-china-version-einrichten/" target="_blank" rel="noopener">Smartzone: setting up China Vivos, notification fixes</a></li>
+      <li><a href="https://www.notebookcheck.net/Google-Pay-suddenly-stops-working-Major-problem-with-Chinese-phones-from-Xiaomi-Vivo-Oppo-OnePlus-and-others.1358219.0.html" target="_blank" rel="noopener">Notebookcheck: tap-to-pay blocked on China phones</a></li>
+      <li><a href="https://www.xda-developers.com/vivo-unofficial-bootloader-unlock-x70-pro-plus/amp/" target="_blank" rel="noopener">XDA: Vivo has no official bootloader unlock</a></li>
+      <li><a href="https://www.bajajfinserv.in/how-to-check-vivo-model-with-code" target="_blank" rel="noopener">Bajaj Finserv: Vivo dialer codes</a></li>
+      <li><a href="https://www.thedailystar.net/tech-startup/news/how-check-if-your-mobile-illegal-or-not-4022981" target="_blank" rel="noopener">The Daily Star: NEIR checks, de-registration</a></li>
+      <li><a href="https://www.tbsnews.net/explainer/what-national-equipment-identity-register-neir-1290026" target="_blank" rel="noopener">TBS News: NEIR explained, KYD SMS to 16002</a></li>
+      <li><a href="https://en.ittefaq.com.bd/15190/no-deregistration-no-used-phone-sale-btrc" target="_blank" rel="noopener">Daily Ittefaq: BTRC notice on de-registration before resale</a></li>
+      <li><a href="https://neir.btrc.gov.bd" target="_blank" rel="noopener">neir.btrc.gov.bd: official BTRC NEIR portal</a> (BTRC helpline 100)</li>
+    </ul>
+    <p style="font-size:.85rem;color:var(--muted)">Dialer codes and menu paths are community-reported and differ between OriginOS builds. If a path is missing, use the Settings search box.</p>
+  </section>
+
+  <div class="toolbar">
+    <button class="btn pri" id="copy" type="button">Copy problems to send to Claude</button>
+    <button class="btn" id="clear" type="button">Clear all ticks</button>
+  </div>
+  <textarea id="report" hidden readonly rows="8" aria-label="Report text"></textarea>
+</div>
+
+<div class="bar" role="status" aria-live="polite">
+  <div class="bar-in">
+    <div class="verdict v-wait" id="verdict"><strong id="v-title">Not started</strong><span id="v-text"></span></div>
+    <div class="meter"><i id="meter"></i></div>
+    <div class="meter-row"><span id="m-left">0 of 0 checked</span><span id="m-pct">0%</span></div>
+  </div>
+</div>
+
+<script>
+var PH=[
+{id:"prep",name:"Before you go",sub:"Do this tonight and on the way.",items:[
+ {id:"p1",p:"m",t:"Pay last, and only after the required checks pass",how:["Take cash or arrange the transfer, but do not hand anything over until the bar says BUY.","Meet in a lit public place, with a friend if you can."],pass:"You decide when money moves.",flag:"Seller wants money first or rushes you. Walk away."},
+ {id:"p2",p:"i",t:"Pack the tools",how:["Power bank, USB-C cable, SIM ejector pin, torch, your own SIM with data, and a second phone for hotspot and test calls.","If you have one, a small kitchen scale."],pass:"Everything in the bag.",flag:"Missing items only slow you down."},
+ {id:"p3",p:"i",t:"Ask for the box label, IMEI and a screenshot in advance",how:["Ask for a photo of the box label and a screenshot of Settings > About phone.","Compare model, RAM/storage and IMEI with the phone in person."],pass:"Seller sends them without fuss.",flag:"Seller refuses or sends a cropped picture."},
+ {id:"p4",p:"m",t:"Agree a 24 to 48 hour trial or return in writing",how:["Notification delays on China software often show up overnight, and a short meetup cannot test that.","Ask for a written, signed return agreement if the phone fails with your SIM and apps."],pass:"Seller agrees in writing. Save a photo of it.",flag:"Seller refuses any trial. Price in the risk heavily or walk away."},
+ {id:"p5",p:"n",t:"Know your price",how:["Check recent sold prices for the same RAM/storage version.","Remember it is a China-only phone with no global version, so the price should reflect that."],pass:"You have a walk-away number.",flag:""}
+]},
+{id:"id",name:"Identity and paperwork",sub:"Confirms it is the real X100 Ultra and legal to use in Bangladesh.",items:[
+ {id:"i1",p:"m",t:"It is really an X100 Ultra, not another Vivo",how:["Settings > About phone: the name should read X100 Ultra.","Compare with the box label.","Check the rear: a large camera ring with one 200 MP periscope lens and the Zeiss marking."],pass:"X100 Ultra, with the box agreeing.",flag:"Different model name, or the box belongs to another model. Walk away."},
+ {id:"i2",p:"i",t:"Model number is a known one",how:["Settings > About phone > Model number, or the box label.","GSMArena lists V2366GA and V2366HA."],pass:"One of those model numbers.",flag:"Any other number. Ask the seller to explain and tell me what it says."},
+ {id:"i3",p:"m",t:"RAM and storage match the listing",how:["Real versions are 12 GB / 256 GB, 16 GB / 512 GB and 16 GB / 1 TB. UFS 4.0 and no card slot.","Check About phone and the storage screen. Also dial *#09# if it works, which shows product name, IMEI and RAM/ROM on some Vivo builds."],pass:"Exact match with what you pay for.",flag:"Less RAM or storage than advertised. Walk away or reprice."},
+ {id:"i4",p:"m",t:"IMEI matches everywhere",how:["Dial *#06#. You should see two IMEIs.","Compare with the box label and the Settings > About phone > Status screen.","Write IMEI 1 in Deal notes above."],pass:"All numbers identical.",flag:"Any mismatch or missing IMEI. Walk away."},
+ {id:"i5",p:"i",t:"IMEI lookup shows a Vivo X100 Ultra",how:["On your own phone, enter IMEI 1 into a free IMEI lookup site such as imei.info."],pass:"Vivo, matching model.",flag:"Different brand or model. Walk away."},
+ {id:"i6",p:"m",t:"NEIR status in Bangladesh is clear",how:["From your own phone send an SMS: KYD [15-digit IMEI] to 16002. Confirm the shortcode on neir.btrc.gov.bd, because rules change.","BTRC says a registered used phone must be de-registered by its owner before it is sold. Ask the seller to do it with you present, using the last four digits of the NID or passport behind the SIM.","A phone imported outside the official channel may need special registration. BTRC helpline is 100, operator care is 121."],pass:"Status is clear and the seller completes de-registration, or the phone is cleanly unregistered and you can register it.",flag:"Reply says blocked, cloned or duplicate IMEI, or the seller cannot or will not de-register. Walk away."},
+ {id:"i7",p:"i",t:"Seller identity and proof of purchase",how:["Ask the seller's name and phone number and look at their NID.","Ask for the box or receipt. Note both in Deal notes."],pass:"Seller identifies themselves and has proof.",flag:"No ID, no box, odd story. A stolen phone is the risk."},
+ {id:"i8",p:"n",t:"Box and accessories",how:["Original box, 80 W charger, cable, case, SIM pin.","The charger may have a China-style plug."],pass:"Complete.",flag:"Missing items are a price point only."}
+]},
+{id:"body",name:"Body and screen",sub:"Do this before powering up anything else. Use the torch.",items:[
+ {id:"b1",p:"i",t:"Frame and corners",how:["Look at the frame, corners and the area around the USB-C port with the torch."],pass:"Light wear only.",flag:"Deep dents mean a hard drop. The camera stabilisation can be damaged."},
+ {id:"b2",p:"m",t:"No dust or moisture inside the camera glass",how:["Shine the torch across the camera ring and all four lenses from different angles."],pass:"Clean, clear glass.",flag:"Fog, droplets or dust inside the glass means water got in or the module was opened. Walk away."},
+ {id:"b3",p:"i",t:"Back and camera ring",how:["Check for cracks, chips and loose or crooked trim."],pass:"No cracks, evenly seated.",flag:"Cracks can let water in and cost money to fix."},
+ {id:"b4",p:"m",t:"Screen has no dead areas, lines or tint",how:["Show a solid white, black, red, green and blue image full screen.","Look for lines, pink or green tint, yellow patches, spots and burn-in ghosts at low brightness.","Draw slowly along the curved edges to test touch."],pass:"Even colour, no lines, touch works to the edges.",flag:"Lines, dead zones or heavy burn-in. Walk away."},
+ {id:"b5",p:"i",t:"Brightness and smoothness",how:["Set brightness to maximum under bright light. The panel is rated for 3000 nits peak.","Settings > Display > refresh rate. Scroll at 120 Hz and look for stutter."],pass:"Very bright, even and smooth.",flag:"Dim, uneven or choppy panel suggests a replaced screen."},
+ {id:"b6",p:"i",t:"Signs the phone was opened",how:["Look for uneven gaps, glue residue or marks around the screen edge and frame.","Look at the screws near the USB-C port, if visible."],pass:"Factory-clean seams.",flag:"Marks or damaged screws mean a repair. Ask what was replaced."},
+ {id:"b7",p:"i",t:"SIM tray and water damage",how:["Eject the SIM tray. It should slide out smoothly and snap back tight.","Look into the slot with the torch for corrosion or green residue.","The phone is rated IP68 and IP69 when new."],pass:"Tight tray, clean slot.",flag:"Corrosion or a loose tray means water exposure. Big discount or walk away."},
+ {id:"b8",p:"n",t:"Weight and buttons",how:["The phone weighs about 229 g. A kitchen scale gives a rough check.","Power and volume buttons should click firmly."],pass:"Close to 229 g, crisp buttons.",flag:"A very different weight may mean a non-genuine or opened device."}
+]},
+{id:"lock",name:"Locks and reset",sub:"The most important phase. A locked phone is worthless to you.",items:[
+ {id:"l1",p:"m",t:"Seller removes accounts and you factory reset it together",how:["Ask the seller to sign out of the vivo account and Google account in front of you.","Settings > System management > Backup and reset > Erase all data, or search \"reset\" in Settings. Watch them do it.","Phone reboots into the setup screen. Connect to your hotspot."],pass:"Setup screen appears normally.",flag:"Seller refuses to reset. Walk away."},
+ {id:"l2",p:"m",t:"No vivo account or Find phone lock after reset",how:["Complete setup. No previous vivo account or password should be asked for.","After setup, open the Find phone setting and check it is not tied to the seller's account."],pass:"No account prompt.",flag:"Asks for the previous owner's vivo account. Walk away."},
+ {id:"l3",p:"m",t:"No Google account lock",how:["After the reset, no previous Google account should be requested."],pass:"No Google verification screen.",flag:"Asks for the previous owner's Google account. Walk away."},
+ {id:"l4",p:"m",t:"Seller states in plain words: stock software, not rooted, not flashed",how:["Vivo offers no official bootloader unlock, so an unlocked or modified phone came from an unofficial method.","Ask directly and note the answer in Deal notes.","Check Settings > System update works (see Software phase)."],pass:"Stock OriginOS, update check works, answers are clear.",flag:"Seller says it was unlocked, rooted or flashed, or avoids the question. Walk away or price in heavily."},
+ {id:"l5",p:"i",t:"No finance or remote-lock app",how:["Search \"device admin\" in Settings and open the device admin apps list.","Scan the full app list for lock controller or finance apps."],pass:"None found.",flag:"A lock controller means the phone can be locked if payments were missed. Walk away."},
+ {id:"l6",p:"i",t:"No strange apps, pop-ups or profiles",how:["Scroll the full app list. Watch for adware or unknown installers.","Check Settings for any management profile."],pass:"Only vivo and Google apps you recognise.",flag:"Unknown apps or pop-ups."}
+]},
+{id:"google",name:"Google services",sub:"China phones do not ship with Google. You add it. Needs your hotspot.",items:[
+ {id:"g1",p:"m",t:"Google Play Store installs and opens",how:["Try Settings > More connections > Android Auto > Google Basic Service Management > Download now.","If that is missing, search the vivo app store for \"Google Installer\" or \"Google Play Store\".","Add your Google account under Settings > Accounts. Menu names vary by OriginOS version."],pass:"Play Store opens, you sign in and install an app.",flag:"Cannot install Google services at all. Walk away."},
+ {id:"g2",p:"m",t:"Core Google apps work",how:["Install Gmail, YouTube, Maps and Google Photos. Sign in and use each for a minute.","Send a test email."],pass:"All four work normally.",flag:"Crashes or sign-in errors."},
+ {id:"g3",p:"i",t:"Widevine level for HD streaming",how:["Install the free app DRM Info and read Widevine.","Then open Netflix or YouTube and play an HD video."],pass:"L1 and HD plays. Other reports say streaming works on China Vivos.",flag:"L3 means low-quality streaming."},
+ {id:"g4",p:"i",t:"Play Protect certification (record only)",how:["Play Store > profile > Settings > About > Play Protect certification.","Note the result in Deal notes."],pass:"Certified is ideal.",flag:"Not certified is common on China phones. Some apps may refuse the phone. Price it in."},
+ {id:"g5",p:"m",t:"Your banking and payment apps open and log in",how:["Install your own bank app, bKash and Nagad and log in.","If the app asks for a code sent to your SIM, that tests the network at the same time."],pass:"All your apps run.",flag:"An app you need refuses to run. Walk away."},
+ {id:"g6",p:"n",t:"Google Wallet tap-to-pay",how:["Notebookcheck reported that a Google Play Services update disabled tap-to-pay on China-version phones including the X100 Ultra, later reported solved \"for now\".","Add a card only if you plan to use it."],pass:"Works, or you do not need it.",flag:"Blocked. Not a problem if you pay with other apps."}
+]},
+{id:"rom",name:"Software",sub:"Checks the software is the official China build and updates itself.",items:[
+ {id:"r1",p:"m",t:"System update checks normally",how:["Settings > System update > check for updates."],pass:"Checks without error and says up to date or offers an update.",flag:"Error or no result. The software may be modified. Walk away."},
+ {id:"r2",p:"i",t:"About phone looks consistent",how:["Check the model name, RAM, storage and software version fields.","Take a photo of the screen for Deal notes."],pass:"Normal values.",flag:"Blank, odd or non-Vivo values."},
+ {id:"r3",p:"i",t:"Chipset is Snapdragon 8 Gen 3",how:["Open DevCheck or CPU-Z and read the SoC."],pass:"Snapdragon 8 Gen 3.",flag:"Any other chip. Walk away."},
+ {id:"r4",p:"n",t:"Remove pre-installed apps you do not want",how:["China phones include apps you may not need. Disable or uninstall what the system allows."],pass:"App list is tidy.",flag:"Apps that cannot be removed and show ads."},
+ {id:"r5",p:"n",t:"Language",how:["Settings > System > Language. Switch to English and check the menus are readable."],pass:"English works fully.",flag:"Some Chinese-only screens are normal."}
+]},
+{id:"net",name:"Network and notifications",sub:"The part you said must be perfect. This is the main risk of a China phone.",items:[
+ {id:"n1",p:"m",t:"Calls work both directions",how:["Insert your SIM. Turn off Wi-Fi.","Call your second phone for a minute, then call back from it.","Check you can hear clearly and the other side hears you."],pass:"Clear audio both ways.",flag:"No signal, dropped call or one-way audio. Walk away."},
+ {id:"n2",p:"m",t:"VoLTE or HD voice works on your operator",how:["Look for an HD or VoLTE icon during a call, or check Settings > Mobile network > your SIM.","Try with a second operator SIM if the seller has one."],pass:"Calls connect on 4G and sound clear.",flag:"Calls fail on 4G or the phone falls back to poor quality. China phones can have carrier-profile gaps. Walk away."},
+ {id:"n3",p:"m",t:"Mobile data is fast and stable",how:["Load sites and play video on mobile data only.","Run a speed test and compare with your current phone on the same SIM.","The 4G band list includes 1, 3, 5, 7, 8, 40 and 41. Check which your operator uses."],pass:"Similar or better than your current phone.",flag:"Much slower or constantly drops. Walk away."},
+ {id:"n4",p:"m",t:"Notifications arrive instantly with the app closed",how:["Install WhatsApp and Messenger. Close both and lock the screen.","For each app: App info > Permissions, allow all the notification-related ones. Under Battery, allow high background power use, and lock the app in the recent-apps list.","Message from your other phone and also send a Gmail. Repeat three times."],pass:"Sound and banner within seconds each time.",flag:"Late or missing alerts after the settings are fixed. Walk away."},
+ {id:"n5",p:"m",t:"Notifications still arrive after 30 minutes idle",how:["Lock the phone, leave it, and message it after 30 to 60 minutes on mobile data.","Vivo power management can block alerts after a long idle period."],pass:"Arrive within seconds.",flag:"Arrive late or only when you pick up the phone."},
+ {id:"n6",p:"i",t:"Overnight notification test during your trial",how:["Leave the phone on with the settings above and mobile data on.","Send messages in the morning and check alert times."],pass:"Notifications appear on time.",flag:"Delays. A guide says removing the power-saving app via ADB may help, but commenters said it did not work on the X100 Ultra. Use your return agreement."},
+ {id:"n7",p:"i",t:"Turn off automatic Wi-Fi to mobile-data switching",how:["Settings > WLAN > Wi-Fi network assistant, if present, and switch off the automatic data fallback."],pass:"Off.",flag:""},
+ {id:"n8",p:"i",t:"SMS send and receive",how:["Send an SMS to your second phone and back."],pass:"Both work.",flag:"One direction fails."},
+ {id:"n9",p:"i",t:"Second SIM slot works",how:["Move your SIM to slot 2 or insert both."],pass:"Network found in both.",flag:"Slot 2 dead. Discount if you need dual SIM."},
+ {id:"n10",p:"i",t:"Wi-Fi, Bluetooth, NFC and GPS",how:["Join Wi-Fi and run a speed test.","Pair earbuds and play audio.","Turn on NFC.","Open Maps outdoors and wait for a location fix."],pass:"All four work.",flag:"Any fails."}
+]},
+{id:"hw",name:"Hardware",sub:"Core parts that wear or get swapped.",items:[
+ {id:"h1",p:"i",t:"Microphones and speakers",how:["Record a voice note and play it back loudly.","Cover the bottom mic and speak, then the top mic.","Play music and listen to both speakers."],pass:"Clear recording, stereo sound, no crackle.",flag:"Muffled mic or crackling speaker."},
+ {id:"h2",p:"i",t:"Ultrasonic fingerprint scanner",how:["Settings > Fingerprint. Register your thumb.","Unlock 10 times in a row, then try with a slightly damp finger.","GSMArena lists an under-display ultrasonic scanner. One XDA report says an unofficial bootloader unlock disabled the fingerprint on a Vivo, so a working scanner is a mild good sign."],pass:"Fast, reliable unlock.",flag:"Fails often. It may be a replaced screen."},
+ {id:"h3",p:"i",t:"Sensors",how:["Hold the phone to your ear during a call. The screen should turn off.","Rotate the phone and check auto-rotate.","Open a compass app and move the phone in a figure eight."],pass:"All respond.",flag:"Screen stays on during calls, or compass stuck."},
+ {id:"h4",p:"m",t:"Charging and USB-C port",how:["Plug in with your power bank and cable. It should charge.","Gently wiggle the plug. Charging should not drop.","Try the original 80 W charger if the seller has it and check the screen shows fast charging."],pass:"Charges steadily.",flag:"Does not charge or drops when wiggled. Walk away."},
+ {id:"h5",p:"n",t:"Wireless and reverse charging",how:["Place it on a Qi charger. The phone supports 30 W wireless and reverse charging."],pass:"Charges.",flag:"Not a deal-breaker."},
+ {id:"h6",p:"n",t:"Haptics and vibration",how:["Type on the keyboard with haptics on and trigger a ringtone vibration."],pass:"Strong, tight vibration.",flag:"Weak or rattly."}
+]},
+{id:"cam",name:"Cameras",sub:"The reason you are buying this phone.",items:[
+ {id:"c1",p:"m",t:"All four cameras work",how:["Open Camera. Switch through ultrawide, main, telephoto and the front camera.","Each should focus and show a sharp, clean image.","Check for a black screen or a camera error."],pass:"All four show a clean image.",flag:"Any camera black, blurry or erroring. Walk away."},
+ {id:"c2",p:"i",t:"200 MP periscope telephoto and macro",how:["Zoom to the telephoto lens, about 3.7x optical, and shoot a distant sign.","Try the close-up macro mode on the telephoto lens.","Take a photo in the 200 MP mode if available."],pass:"Sharp, quick focus.",flag:"Constant focus hunting or soft images."},
+ {id:"c3",p:"i",t:"No dust spots on the sensors",how:["Point at a plain white wall or the sky and check each lens for dark blotches."],pass:"Even surface.",flag:"Fixed dark spots mean dust inside."},
+ {id:"c4",p:"i",t:"Stabilisation",how:["Record video while walking and while shaking gently. Picture should stay smooth.","Listen near the camera for a loud clacking sound. A small rattle is normal."],pass:"Smooth video, quiet module.",flag:"Loud clacking means damaged stabilisation."},
+ {id:"c5",p:"n",t:"Zeiss style modes",how:["Try the Zeiss portrait and style modes on a face in mixed light."],pass:"Natural skin tones.",flag:"Style differences are not faults."},
+ {id:"c6",p:"i",t:"Video, torch and flash",how:["Record 30 seconds of 4K video with sound.","Switch on the flashlight and take a flash photo."],pass:"Records with sound and plays back.",flag:"No audio or crashes."},
+ {id:"c7",p:"i",t:"Front camera",how:["Take a selfie and a short selfie video."],pass:"Sharp, no marks.",flag:"Blurry or errors."}
+]},
+{id:"perf",name:"Performance and battery",sub:"The phone should be fast, cool and healthy.",items:[
+ {id:"f1",p:"i",t:"Battery health",how:["Look for any battery health reading in Settings > Battery, or use DevCheck or AccuBattery.","Ask how old the phone is and how it was charged. The cell is 5500 mAh."],pass:"Reasonable capacity for its age.",flag:"Poor capacity or very fast drain."},
+ {id:"f2",p:"i",t:"Three-minute stress test",how:["Run a 3D benchmark or a heavy game for 3 minutes.","Check heat and stutter."],pass:"Warm but holdable, smooth.",flag:"Too hot to hold, shutdown or heavy stutter."},
+ {id:"f3",p:"i",t:"Reboot twice and use it for 5 minutes",how:["Restart twice. Open apps, scroll and switch between them."],pass:"No crashes, freezes or random reboots.",flag:"Any crash or reboot loop."},
+ {id:"f4",p:"n",t:"Storage speed and space",how:["Copy a large file or record a long video."],pass:"Smooth copy.",flag:"Errors writing files."}
+]},
+{id:"deal",name:"Close the deal",sub:"Only once the bar is green.",items:[
+ {id:"d1",p:"m",t:"Required checks are all green",how:["Look at the bar below. It must say BUY."],pass:"BUY.",flag:"WALK AWAY or still waiting."},
+ {id:"d2",p:"m",t:"Seller completes NEIR de-registration with you present",how:["Watch the seller de-register on the BTRC portal or app."],pass:"Done before payment.",flag:"Seller says they will do it later. Do not pay."},
+ {id:"d3",p:"m",t:"Signed receipt with IMEI, names, price and the trial terms",how:["Short note: model, IMEI 1, price, seller name and phone, date, the trial or return conditions. Both sign.","Photograph the note and the seller's ID if they allow."],pass:"Signed note on your phone.",flag:"Seller refuses to sign."},
+ {id:"d4",p:"i",t:"Negotiate for Important problems and the China-only risk",how:["Use the problems you marked and the lack of a global version to ask for a lower price."],pass:"Agreed price.",flag:"No movement. Walk away."},
+ {id:"d5",p:"n",t:"After buying",how:["Register the phone under your NID and SIM on NEIR.","Sign in with your own vivo account and Google account, and turn on Find phone.","Install updates and re-check notifications after a day."],pass:"Phone is yours and findable.",flag:""}
+]}
+];
+
+var KEY="x100u-inspection-v1";
+var S={s:{},n:{},meta:{}};
+try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.s){S=o;S.n=S.n||{};S.meta=S.meta||{}}}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+var TAG={m:"100% required",i:"Important",n:"Nice to have"};
+var all=[];PH.forEach(function(p){p.items.forEach(function(it){it.ph=p.name;all.push(it)})});
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+
+var host=document.getElementById("phases"),chips=document.getElementById("chips");
+PH.forEach(function(p,i){
+  var sec=document.createElement("section");sec.className="phase";sec.id="ph-"+p.id;
+  var h='<div class="phase-head"><span class="eyebrow">Phase '+(i+1)+' of '+PH.length+'</span><h2>'+esc(p.name)+'</h2><p class="sub">'+esc(p.sub)+'</p></div>';
+  p.items.forEach(function(it){
+    h+='<article class="item '+it.p+'" data-id="'+it.id+'"><div class="item-top"><span class="tag '+it.p+'">'+TAG[it.p]+'</span><h3>'+esc(it.t)+'</h3></div>'+
+    '<details><summary>How to check</summary><div class="body"><ol>'+it.how.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ol>'+
+    '<p class="good"><b>Good:</b> '+esc(it.pass)+'</p>'+(it.flag?'<p class="bad"><b>Problem:</b> '+esc(it.flag)+'</p>':'')+'</div></details>'+
+    '<div class="act"><button type="button" data-v="p" aria-pressed="false">Pass</button><button type="button" data-v="f" aria-pressed="false">Problem</button></div>'+
+    '<textarea id="note-'+it.id+'" data-note="'+it.id+'" placeholder="What did you see?" hidden></textarea></article>';
+  });
+  sec.innerHTML=h;host.appendChild(sec);
+  var a=document.createElement("a");a.href="#ph-"+p.id;a.id="chip-"+p.id;a.innerHTML=esc(p.name)+' <b></b>';
+  a.addEventListener("click",function(e){e.preventDefault();sec.scrollIntoView({behavior:"smooth",block:"start"})});
+  chips.appendChild(a);
+});
+
+function paint(){
+  var total=all.length,done=0,mustTotal=0,mustDone=0,mustFail=[],impFail=[],mustLeft=0;
+  all.forEach(function(it){
+    var v=S.s[it.id];if(v)done++;
+    if(it.p==="m"){mustTotal++;if(v)mustDone++;else mustLeft++}
+    if(v==="f"){(it.p==="m"?mustFail:it.p==="i"?impFail:[]).push(it)}
+    var el=host.querySelector('[data-id="'+it.id+'"]');
+    el.classList.toggle("st-p",v==="p");el.classList.toggle("st-f",v==="f");
+    el.querySelectorAll(".act button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.v===v))});
+    var ta=el.querySelector("textarea");ta.hidden=v!=="f";
+    if(document.activeElement!==ta)ta.value=S.n[it.id]||"";
+  });
+  PH.forEach(function(p){
+    var d=p.items.filter(function(it){return S.s[it.id]}).length;
+    var c=document.getElementById("chip-"+p.id);c.querySelector("b").textContent=d+"/"+p.items.length;
+    c.classList.toggle("done",d===p.items.length);
+  });
+  var vb=document.getElementById("verdict"),t=document.getElementById("v-title"),x=document.getElementById("v-text");
+  var cls="v-wait",title="Not started",txt="Start with the first phase.";
+  if(mustFail.length){cls="v-stop";title="Walk away";txt=mustFail.length+" required problem"+(mustFail.length>1?"s":"")+": "+mustFail[0].t+(mustFail.length>1?" and more":"")+"."}
+  else if(mustLeft>0){cls="v-wait";title=done?"Keep going":"Not started";txt=mustLeft+" required check"+(mustLeft>1?"s":"")+" still open."+(impFail.length?" "+impFail.length+" important problem"+(impFail.length>1?"s":"")+" so far.":"")}
+  else if(impFail.length){cls="v-neg";title="Negotiate";txt="All required checks pass. "+impFail.length+" important problem"+(impFail.length>1?"s":"")+" to price in."}
+  else{cls="v-go";title="Buy";txt="All "+mustTotal+" required checks pass."+(done<total?" "+(total-done)+" optional left.":"")}
+  vb.className="verdict "+cls;t.textContent=title;x.textContent=txt;
+  var pct=Math.round(done/total*100);
+  document.getElementById("meter").style.width=pct+"%";
+  document.getElementById("m-left").textContent=done+" of "+total+" checked · required "+mustDone+"/"+mustTotal;
+  document.getElementById("m-pct").textContent=pct+"%";
+}
+
+host.addEventListener("click",function(e){
+  var b=e.target.closest(".act button");if(!b)return;
+  var id=b.closest(".item").dataset.id,v=b.dataset.v;
+  if(S.s[id]===v)delete S.s[id];else S.s[id]=v;
+  save();paint();
+});
+host.addEventListener("input",function(e){
+  var id=e.target.dataset.note;if(!id)return;S.n[id]=e.target.value;save();
+});
+document.querySelectorAll("[data-meta]").forEach(function(inp){
+  inp.value=S.meta[inp.dataset.meta]||"";
+  inp.addEventListener("input",function(){S.meta[inp.dataset.meta]=inp.value;save()});
+});
+
+document.getElementById("only-must").addEventListener("change",function(e){
+  host.querySelectorAll(".item:not(.m)").forEach(function(el){el.hidden=e.target.checked});
+});
+var openAll=false;
+document.getElementById("open-all").addEventListener("click",function(e){
+  openAll=!openAll;host.querySelectorAll("details").forEach(function(d){d.open=openAll});
+  e.target.textContent=openAll?"Close all details":"Open all details";
+});
+
+function reportText(){
+  var L=["Vivo X100 Ultra inspection"];
+  var m=S.meta;if(m.seller)L.push("Seller: "+m.seller);if(m.imei1)L.push("IMEI 1: "+m.imei1);if(m.price)L.push("Price: "+m.price);
+  var bad=all.filter(function(it){return S.s[it.id]==="f"});
+  L.push("");L.push(bad.length?"Problems:":"No problems marked.");
+  bad.forEach(function(it){L.push("- ["+TAG[it.p]+"] "+it.ph+": "+it.t+(S.n[it.id]?" — "+S.n[it.id]:""))});
+  var open=all.filter(function(it){return it.p==="m"&&!S.s[it.id]});
+  if(open.length){L.push("");L.push("Required checks not done: "+open.length)}
+  return L.join("\n");
+}
+document.getElementById("copy").addEventListener("click",function(e){
+  var btn=e.target,txt=reportText(),ta=document.getElementById("report");
+  function fallback(){ta.hidden=false;ta.value=txt;ta.focus();ta.select();btn.textContent="Select and copy the text below"}
+  try{navigator.clipboard.writeText(txt).then(function(){btn.textContent="Copied. Paste it in the chat.";setTimeout(function(){btn.textContent="Copy problems to send to Claude"},2500)},fallback)}catch(err){fallback()}
+});
+var clr=document.getElementById("clear"),ct;
+clr.addEventListener("click",function(){
+  if(clr.dataset.armed){S.s={};S.n={};save();paint();clr.textContent="Clear all ticks";delete clr.dataset.armed;clearTimeout(ct);return}
+  clr.dataset.armed="1";clr.textContent="Tap again to clear";ct=setTimeout(function(){clr.textContent="Clear all ticks";delete clr.dataset.armed},4000);
+});
+paint();
+
+// Light/Dark Theme toggle & storage sync
+(function() {
+  var btn = document.getElementById("theme-toggle");
+  var moon = document.getElementById("theme-icon-moon");
+  var sun = document.getElementById("theme-icon-sun");
+  if (!btn) return;
+
+  function updateIcons(theme) {
+    if (theme === "light") {
+      if (moon) moon.style.display = "none";
+      if (sun) sun.style.display = "block";
+    } else {
+      if (moon) moon.style.display = "block";
+      if (sun) sun.style.display = "none";
+    }
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("product-inspection-theme", theme);
+    localStorage.setItem("hub-theme", theme);
+    updateIcons(theme);
+  }
+
+  var current = document.documentElement.getAttribute("data-theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  setTheme(current);
+
+  btn.addEventListener("click", function() {
+    var cur = document.documentElement.getAttribute("data-theme");
+    setTheme(cur === "light" ? "dark" : "light");
+  });
+
+  window.addEventListener("storage", function(e) {
+    if (e.key === "product-inspection-theme" || e.key === "hub-theme") {
+      if (e.newValue) {
+        document.documentElement.setAttribute("data-theme", e.newValue);
+        updateIcons(e.newValue);
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -8,5 +8,15 @@
     "date": "2026-10-18",
     "description": "Pre-purchase inspection checklist: genuine hardware check, screen tint/burn-in, Leica camera seals, China vs Global ROM verification.",
     "model": "24030PN60G / 24031PN0DC"
+  },
+  {
+    "id": "vivo-x100-ultra",
+    "title": "Vivo X100 Ultra Inspection Sheet",
+    "category": "Phones",
+    "brand": "Vivo",
+    "url": "phones/vivo/vivo-x100-ultra-inspection-sheet.html",
+    "date": "2026-10-24",
+    "description": "Pre-purchase inspection checklist: Zeiss 200MP periscope & gimbal OIS, China OriginOS check, ultrasonic fingerprint, and BTRC NEIR de-registration.",
+    "model": "V2366GA / V2366HA"
   }
 ]
